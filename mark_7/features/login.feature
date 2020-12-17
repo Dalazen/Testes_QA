@@ -2,17 +2,17 @@
 Funcionalidade: Autenticação
 
 	Contexto: Home
-		Dado que eu acesso o sistema
+		Dado que acesse o sistema
 	
         @sprint1 @logout
         Cenário: Login
-            Quando faço login com "guilhermebatistellad@gmail.com" e "123456"
-            Então vejo a mensagem de boas vindas "Olá, Guilherme"
+            Quando fazer login com "guilhermebatistellad@gmail.com" e "123456"
+            Então deverá exibir a mensagem de boas vindas "Olá, Guilherme"
 
         @sprint2
         Esquema do Cenário: Login exception
-            Quando faço login com "<email>" e "<senha>"
-            Então vejo a mensagem de alerta "<saida>"
+            Quando fazer login com "<email>" e "<senha>"
+            Então deverá exibir a mensagem de alerta "<saida>"
 
             Exemplos:
             | email                          | senha  | saida                       |

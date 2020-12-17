@@ -3,10 +3,10 @@ Funcionalidade: Meu perfil
 
 	@logout
 	Esquema do Cenário: Atualizar perfil
-		Dado que estou autenticado com "<email>" e "<senha>"
-		E acesso o meu perfil
-		Quando completo o meu cadastro com "<empresa>" e "<cargo>"
-		Então devo ver a mensagem de atualização cadastral:
+		Dado que esteja autenticado com "<email>" e "<senha>"
+		Quando acessar o meu perfil
+		E completar cadastro com "<empresa>" e "<cargo>"
+		Então deverá exibir a mensagem de atualização cadastral:
         """
         Perfil atualizado com sucesso.
         """
