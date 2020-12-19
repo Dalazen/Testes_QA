@@ -52,6 +52,19 @@ GEM
       middleware
       thor
       thread_safe
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.0)
     sys-uname (1.2.2)
       ffi (~> 1.1)
     thor (1.0.1)
@@ -65,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   cucumber
+  rspec
 
 BUNDLED WITH
    2.2.1
