@@ -5,6 +5,10 @@ class LoginPage
         visit "/login"
     end
 
+    def painel
+		find("#task-board")
+	end
+
 	def logar(email, senha)
 		find("#login_email").set email
         find("input[name=password]").set senha

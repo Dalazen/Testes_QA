@@ -4,12 +4,12 @@ Funcionalidade: Autenticação
 	Contexto: Home
 		Dado que acesse o sistema
 	
-        @sprint1 @logout
+        @entrar @logout
         Cenário: Login
             Quando fazer login com "guilhermebatistellad@gmail.com" e "123456"
             Então deverá exibir a mensagem de boas vindas "Olá, Guilherme"
 
-        @sprint2
+        @entrar
         Esquema do Cenário: Login exception
             Quando fazer login com "<email>" e "<senha>"
             Então deverá exibir a mensagem de alerta "<saida>"

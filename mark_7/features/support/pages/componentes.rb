@@ -15,4 +15,5 @@ class Sidebar
 			click_link "Perfil"
 		end
 	end
+	
 end

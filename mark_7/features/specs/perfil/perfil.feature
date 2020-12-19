@@ -1,10 +1,10 @@
 #language: pt
-Funcionalidade: Meu perfil
+Funcionalidade: Acessar perfil
 
-	@logout
+	@perfil @logout
 	Esquema do Cenário: Atualizar perfil
 		Dado que esteja autenticado com "<email>" e "<senha>"
-		Quando acessar o meu perfil
+		Quando acessar o perfil
 		E completar cadastro com "<empresa>" e "<cargo>"
 		Então deverá exibir a mensagem de atualização cadastral:
         """

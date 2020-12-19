@@ -3,7 +3,7 @@ Dado("que esteja autenticado com {string} e {string}") do |email, senha|
 	@login_page.logar(email,senha)
 end
 
-Quando("acessar o meu perfil") do
+Quando("acessar o perfil") do
 	@side.acessa_perfil
 end
 
