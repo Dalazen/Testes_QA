@@ -6,7 +6,7 @@ class TarefasPage
 	end
 	
 	def buscar_tr(nome)
-		find("#tasks body tr", text: nome)
+		find("#tasks tbody tr", text: nome)
 	end
 
 	def alerta
@@ -21,11 +21,6 @@ class TarefasPage
 			fill_in "dueDate", with: data_f
 			click_on "Cadastrar"
 		end
-	end
-
-	def remover_tarefas
-		find("#delete-button").click_button
-		find(".btn.btn-danger").click_button
 	end
 
 end

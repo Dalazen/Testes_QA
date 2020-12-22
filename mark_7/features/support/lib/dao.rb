@@ -5,10 +5,8 @@ class DAO
 
 	Mongo::Logger.logger = Logger.new("log/mongo.log")
 
-	def init
-		# mongodb://usuario:senha@servidor:porta/banco_de_dados
-		str_con = "mongodb://127.0.0.1:27017/markdb"
-		@client = Mongo::Client.new(str_con)
+	def initialize
+		@client = Mongo::Client.new(["127.0.0.1:27017"], :database => "markdb")
 	end
 
 	def obter_usuario(email)
