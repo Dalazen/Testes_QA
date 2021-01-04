@@ -1,22 +1,10 @@
-class LoginPage
-    include Capybara::DSL
+class LoginPage < SitePrism::Page
+    set_url "/login"
 
-    def login_path
-        visit "/login"
-    end
-
-    def painel
-		find("#task-board")
-	end
-
-	def logar(email, senha)
-		find("#login_email").set email
-        find("input[name=password]").set senha
-        find("button[id*=btnLogin]").click
-    end
-    
-    def alerta
-        find(".alert-login")
-    end
-    
+    element :painel, "#task-board"
+    element :login_email, "#login_email"
+    element :login_senha, "input[name=password]"
+    element :login_button, "button[id*=btnLogin]"
+    element :alerta, ".alert-login"
+  
 end

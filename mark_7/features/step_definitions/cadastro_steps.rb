@@ -1,7 +1,7 @@
 require "faker"
 
 Dado("que esteja no formulário de cadastro") do
-    @cadastro_page.cadastro_path
+    @cadastro_page.load
 end
 
 Dado("inserir os dados {string} e {string} e {string}") do |nome, email, senha|
@@ -17,13 +17,17 @@ Dado("que inserir os dados {string} e {string} e {string}") do |nome, email, sen
 end
 
 Quando("realizar cadastro") do
-    @cadastro_page.cadastrar(@nome, @email, @senha)
+    @cadastro_page.registro_nome.set @nome
+    @cadastro_page.registro_email.set @email
+    @cadastro_page.registro_senha.set @senha
+
+    @cadastro_page.button_registro.click
 end
 
 Então("exibir a mensagem de boas vindas {string}") do |mensagem|
-    expect(@tarefas_page.painel).to have_content mensagem
+    expect(@login_page.painel).to have_content mensagem
 end
 
 Então("exibir a mensagem de erro {string}") do |mensagem|
-    expect(@cadastro_page.alerta).to have_content mensagem
+    expect(@cadastro_page.alerta.text).to have_content mensagem
 end

@@ -1,14 +1,6 @@
-class PerfilPage
-	include Capybara::DSL
-
-	def alerta
-		find(".alert-login")
-	end
-
-	def completa_cadastro(empresa, cargo)
-		find("#profile-company").set empresa
-		combo = find("select[name$=job]")
-		combo.find("option", text: cargo).select_option
-		click_button "Salvar"
-	end
+class PerfilPage < SitePrism::Page
+	element :alerta, ".alert-login"
+	element :perfil_empresa, "#profile-company"
+	element :perfil_option, "select[class='form-control']"
+	element :perfil_button, "#form-submit-button"
 end

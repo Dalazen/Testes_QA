@@ -13,10 +13,13 @@ end
 Before("@login") do
 	@usuario = {email: "jed@teste.com", senha: "543216"}
 
-	@login_page.login_path
-	@login_page.logar(@usuario[:email], @usuario[:senha])
+	@login_page.load
+	@login_page.login_email.set(@usuario[:email])
+	@login_page.login_senha.set (@usuario[:senha])
+	@login_page.login_button.click
 end
 
 After("@logout") do
-	@nav.sair
+	@nav.dropdown.click
+	@nav.sair.click
 end

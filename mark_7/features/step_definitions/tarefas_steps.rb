@@ -18,7 +18,10 @@ Dado("a tarefa já foi cadastrada") do
 end
 
 Quando("fizer o cadastro desta tarefa") do
-	@tarefas_page.cadastrar(@nome_tarefa, @data_tarefa)
+	@tarefas_page.cadastro.click
+	@tarefas_page.nome.set @nome_tarefa
+	@tarefas_page.data_f.set @data_tarefa
+	@tarefas_page.cadastrar_tarefa.click
 end
 
 Então("esta tarefa deverá exibir o status {string}") do |status_tarefa|
@@ -27,7 +30,7 @@ Então("esta tarefa deverá exibir o status {string}") do |status_tarefa|
 end
 
 Então("deve exibir a seguinte mensagem {string}") do |mensagem_alerta|
-	expect(@tarefas_page.alerta).to eql mensagem_alerta
+	expect(@tarefas_page.alerta.text).to eql mensagem_alerta
 end
 
 Então("deve haver somente {int} tarefa com o nome cadastrado") do |quantidade|

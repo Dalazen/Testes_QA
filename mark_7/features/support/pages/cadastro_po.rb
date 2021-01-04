@@ -1,19 +1,10 @@
-class CadastroPage
-    include Capybara::DSL
+class CadastroPage < SitePrism::Page
+    set_url "/register"
 
-    def cadastro_path
-        visit "/register"
-    end
-
-    def cadastrar(nome, email, senha)
-        find("#register_name").set nome
-		find("#register_email").set email
-        find("#register_password").set senha
-        find(".btn-accent").click
-    end
-    
-    def alerta
-        find(".alert-message")
-    end
+    element :registro_nome, "#register_name"
+    element :registro_email, "#register_email"
+    element :registro_senha, "#register_password"
+    element :button_registro, ".btn-accent"
+    element :alerta, ".alert-message"
     
 end
