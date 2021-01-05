@@ -1,15 +1,15 @@
 class TarefasPage < SitePrism::Page
-	include Capybara::DSL
-	
-	def buscar_tr(nome)
-		find("#tasks tbody tr", text: nome)
-	end
 
 	element :alerta, ".alert-warn"
 	element :cadastro, "#insert-button"
 	element :cadastrar_tarefa, "#form-submit-button"
 	element :data_f, "#dueDate"
 	element :nome, "#title"
+	elements :tr, "#tasks tbody tr"
+
+	def buscar_tr(n_task)
+		tr.find { |tr| tr.text.match(/#{n_task}/i) }
+	end
 
 end
 
