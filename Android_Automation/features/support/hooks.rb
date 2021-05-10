@@ -4,13 +4,15 @@ end
 
 After do |scenario|
   if scenario.failed?
-    if !File.directory?("screnshots")
-      FileUtils.mkdir_p("screnshots")
+    # Realiza screenshot caso cenário falhe
+    if !File.directory?("reports/screenshots")
+      # Se pasta não existir será criada
+      FileUtils.mkdir_p("reports/screenshots")
     end
 
     time_stamp = Time.now.strftime("%Y-%m-%d_%H.%M.%S")
     screenshot_name = time_stamp + ".png"
-    screenshot_file = File.join("screnshots", screenshot_name)
+    screenshot_file = File.join("reports/screenshots", screenshot_name)
     $driver.screenshot(screenshot_file)
     embed("#{screenshot_file}", "image/png")
  end
@@ -18,5 +20,5 @@ After do |scenario|
 end
 
 AfterConfiguration do
-  FileUtils.rm_r("screenshots") if File.directory?("screenshots")
+  FileUtils.rm_r("reports/screenshots") if File.directory?("reports/screenshots")
 end
