@@ -20,4 +20,3 @@ end
 AfterConfiguration do
   FileUtils.rm_r("screenshots") if File.directory?("screenshots")
 end
-

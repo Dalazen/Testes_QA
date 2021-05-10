@@ -5,4 +5,8 @@ menu: --tags @menu --format html --out report.html --format pretty
 wip: --tags @wip --format html --out report.html --format pretty
 gestures: --tags @gestures --format html --out report.html --format pretty
 
+# Dispositivo
+android: DEVICE=android
+ios: DEVICE=ios
+
 #all_tests:

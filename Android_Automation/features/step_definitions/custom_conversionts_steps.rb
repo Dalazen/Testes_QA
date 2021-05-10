@@ -33,5 +33,3 @@ end
 Then(/^I verify "([^"]*)" added to Custom conversions list$/) do |conversion_name|
   text(conversion_name)
 end
-
-
